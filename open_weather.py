@@ -66,4 +66,8 @@ def map_condition(id):
 
 
 if __name__ == "__main__":
-    pass
+    eiffel_tower = get_request(lat=48.85, lon=2.29, key=API_key)
+    weather_id, temperature, humidity = get_weather(eiffel_tower)
+    condition = map_condition(weather_id)
+
+    print(f"Humidity: {humidity:.1f} \nTemperature: {temperature:.1f} \nWeather Condition: {condition}")
